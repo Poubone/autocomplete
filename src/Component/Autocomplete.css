@@ -1,4 +1,4 @@
-.autocomplete {
+.autocomplete-container {
     position: relative;
     width: 300px;
 }
@@ -9,22 +9,28 @@
     font-size: 16px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    margin-bottom: 0; 
+    margin-bottom: 0;
+    outline: none;
+    transition: border-color 0.2s;
 }
 
-.autocomplete-suggestions {
+.autocomplete-input:focus {
+    border-color: #00796b; 
+}
+
+.suggestion-list {
     position: absolute;
-    top: 100%; 
+    top: 100%;
     left: 0;
     right: 0;
     border: 1px solid #ddd;
-    border-top: none;
     background: white;
     max-height: 200px;
     overflow-y: auto;
     z-index: 10;
     border-radius: 0 0 4px 4px;
-    margin-top: 4px; 
+    margin-top: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); 
 }
 
 .suggestion-item {
@@ -33,16 +39,26 @@
     display: flex;
     align-items: center;
     font-size: 16px;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, color 0.2s;
 }
 
-.suggestion-item i {
+.suggestion-item .icon {
     margin-right: 10px;
 }
 
-.suggestion-item.selected,
 .suggestion-item:hover {
     background-color: #f0f0f0;
+}
+
+.suggestion-item.highlighted {
+    background-color: #e0f7fa; 
+    color: #00796b;
+}
+
+.suggestion-item.already-selected {
+    background-color: #d0e7e5;
+    color: #004d40;
+    font-weight: bold;
 }
 
 .selected-items {
@@ -60,6 +76,12 @@
     border-radius: 4px;
     font-size: 14px;
     color: #00796b;
+    border: 1px solid #b2ebf2;
+    transition: box-shadow 0.2s;
+}
+
+.selected-item:hover {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1); 
 }
 
 .selected-item span {
@@ -74,6 +96,7 @@
     font-weight: bold;
     font-size: 16px;
     line-height: 1;
+    transition: color 0.2s;
 }
 
 .remove-button:hover {

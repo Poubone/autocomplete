@@ -125,7 +125,7 @@ export default function AutoComplete({ fetchData, options = [], onItemSelect, al
                             className={`suggestion-item ${index === highlightedIndex ? "highlighted" : ""
                                 } ${allowMultiple &&
                                     selectedItems.some((selected) => selected.label === suggestion.label)
-                                    ? "already-selected"
+                                    ? "selected-in-list"
                                     : ""
                                 }`}
                         >
@@ -139,10 +139,6 @@ export default function AutoComplete({ fetchData, options = [], onItemSelect, al
                                     {suggestion.label}
                                 </div>
                             )}
-
-
-
-
                         </li>
                     ))}
                 </ul>
