@@ -1,0 +1,81 @@
+.autocomplete {
+    position: relative;
+    width: 300px;
+}
+
+.autocomplete-input {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 0; 
+}
+
+.autocomplete-suggestions {
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    right: 0;
+    border: 1px solid #ddd;
+    border-top: none;
+    background: white;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 10;
+    border-radius: 0 0 4px 4px;
+    margin-top: 4px; 
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.suggestion-item i {
+    margin-right: 10px;
+}
+
+.suggestion-item.selected,
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+.selected-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.selected-item {
+    display: flex;
+    align-items: center;
+    background-color: #e0f7fa;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #00796b;
+}
+
+.selected-item span {
+    margin-right: 8px;
+}
+
+.remove-button {
+    background: none;
+    border: none;
+    color: #00796b;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.remove-button:hover {
+    color: #004d40;
+}
